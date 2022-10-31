@@ -14,41 +14,54 @@
             <div class="middlepane">
                 <h2 >Predict Your Cab Price</h2>
                 <p>
-                    <label>Cab Name </label>
+                    <label>Cab Type </label>
                     <br>
-                    <input type="text" id="cab_type" placeholder="Select Your Cab" style="width: 260px; border: 1px; padding: 5px;">
+                    <input type="text" id="cab_type" placeholder="Lyft Or Uber" style="width: 260px; border: 1px; padding: 5px;">
                 </p>
+                <p>
+                    <label>Name</label>
+                    <br>
+                    <input type="text" id="Name" placeholder='Insert Your Name ex: Taxi'
+                    style="width: 260px; border: 1px; padding: 5px;">
+                </p> 
                 <p>
                     <label>Source</label>
                     <br>
-                    <input type="text" id="Source" placeholder='Insert Your Source ex: Los Angles'
+                    <input type="text" id="Source" placeholder='Insert Your Source ex: West End'
                     style="width: 260px; border: 1px; padding: 5px;">
                 </p>  
                 <p>
                     <label>Destination </label>
                     <BR>
-                    <input id="distance" type="text"    placeholder='Insert Your Destination' 
+                    <input id="distance" type="text"    placeholder='Insert Your Destination ex: North End' 
                     style="width: 260px; border: 1px; padding: 5px;">
                     </BR>
                 </p>
                 <p>
                     <label>Short Summary</label>
                     <br>
-                    <input  id="shortSummary" type="text" placeholder='Insert Your Short Summary'
+                    <input  id="shortSummary" type="text" placeholder='Insert Your Short Summary ex Overcast'
                         style="width: 260px; border: 1px; padding: 5px;">
                 </p>
                 <p>
                     <label>Surge Multiplier </label>
                     <br>
-                    <input  id="surgeMultiplier" type="text"  placeholder='Value Between 1; 1.25; 1.5; 1.75; 2; 2.25; 3;'
+                    <input  id="surgeMultiplier" type="number"  placeholder='Value Between 1; 1.25; 1.5; 1.75; 2; 2.25; 3;'
                      style="width: 260px; border: 1px; padding: 5px; ">
                 </p>
-
-                 
-
+                 <br>
                 <p>
                     <h align="center">
-                        <button id="btnAdd" style="padding: 10px 24px;  color: black; background-color: #bf00ff;">Prediksi</button>
+                        <button id="btnAdd" style="padding: 10px 24px; 
+                        background-color: #bf00ff ; 
+                        border: none;
+                        width: 270px;
+                        color: white;
+                        padding: 15px;
+                        text-align: center;
+                        text-decoration: none;
+                        display: inline-block;
+                        font-size: 16px;">Prediksi</button>
                     </h>
                 </p>
         </div>
@@ -75,9 +88,9 @@
 
     <script>
         document.getElementById('btnAdd').addEventListener('click', () => {
-            //alert('test');
+            
             // get object each element html 
-
+            let a ="";
             let distance = document.getElementById('distance');
             let surgeMultiplier = document.getElementById('surgeMultiplier');
             let shortSummary = document.getElementById('shortSummary');
@@ -85,36 +98,130 @@
             let Hour = document.getElementById('Hour');
             let cab_type = document.getElementById('cab_type');
 
-            let subTotalPrice = document.getElementById('subTotalPrice');
-            let counter = parseInt(distance.value);
-            subTotalPrice.value = 3.15 * distance.value;
+            //Inititial progress //alert('test');
+            let distancel = distance.value.toLowerCase();
+            //console.log(distancel);
+            surgeMultiplierv = parseInt(surgeMultiplier.value);
+            console.log(surgeMultiplierv);
+            //console.log(shortSummaryl.value);
+            let shortSummaryl = shortSummary.value.toLowerCase();
 
-
-
-            let distancev= document.getElementById("distancev");
-            distancev.value = parseInt(distance.value);
-
-            let surgeMultiplierv= document.getElementById("surgeMultiplierv");
-            surgeMultiplierv.value = surgeMultiplier.value;
-
-            let shortSummaryv= document.getElementById("shortSummaryv");
-            shortSummaryv.value = parseInt(shortSummary.value);
-
-            let Sourcev= document.getElementById("Sourcev");
-            Sourcev.value = Source.value;
+            let Sourcel = Source.value.toLowerCase();
+            //console.log(Sourcel);
+            let Hourl = distance.value.toLowerCase();
+            //console.log(Hourl);
+            let cab_typel = cab_type.value.toLowerCase();
+            //console.log(cab_typel);
             
-            let Hourv= document.getElementById("Hourv");
-            Hourv.value = parseInt(Hour.value);
+            
+            if ( distancel == "west end" )
+            {
+            a = 1;
+            //console.log(a);
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "south statiun")
+            {
+            a = 1;
+            //console.log(a);
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "fenway")
+            {
+            a = 1;
+            //console.log(a);
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "beacon hill")
+            {a = 1;
+            //console.log(a);
 
-            let cab_typev= document.getElementById("cab_typev");
-            cab_typev.value = cab_type.value;
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "north station")
+            {a = 1;
+            //console.log(a);
+;
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "back bay")
+            {a = 1;
+            //console.log(a);
+;
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "north end")
+            {a = 1;
+            //console.log(a);
+
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "northeastern university")
+            {a = 1;
+            //console.log(a);
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "financial district")
+            {a = 1;
+            //console.log(a);
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "theatre district")
+            {a = 1;
+            //console.log(a);
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            else if ( distancel == "boston university")
+            {a = 60;
+            //console.log(a);
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+            
+            else if ( distancel == "haymarket square")
+            {
+            a = 1;
+            //console.log(a);
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            subTotalPrice.value = 1.45*a*surgeMultiplierv;
+            }
+
+
+
+
+
+            //let distancev= document.getElementById("distancev");
+            //distancev.value = parseInt(distance.value);
+
+            //let surgeMultiplierv= document.getElementById("surgeMultiplierv");
+            //surgeMultiplierv.value = surgeMultiplier.value;
+
+            //let shortSummaryv= document.getElementById("shortSummaryv");
+            //shortSummaryv.value = parseInt(shortSummary.value);
+
+
+            //let Sourcev= document.getElementById("Sourcev");
+            //Sourcev.value = Source.value;
+            
+            //let Hourv= document.getElementById("Hourv");
+            //Hourv.value = parseInt(Hour.value);
+
+            //let cab_typev= document.getElementById("cab_typev");
+            //cab_typev.value = cab_type.value;
 
             //let Vehiclev= document.getElementById("Vehiclev");
             //Vehiclev.value = Vehicle.value;
 
-
-
-            
             // assign counter with value from quantity value
         });
        
