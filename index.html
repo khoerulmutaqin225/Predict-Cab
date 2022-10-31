@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Predict Taxi</title>
+    <link rel="stylesheet" href="./css/styles.css">
+    <link rel="shortcut icon" href="./images/fb.ico" type="image/x-icon">
+</head>
+
+<body>
+    <div class="container">
+        <div class="main">
+            <div class="middlepane">
+                <h2 >Predict Your Cab Price</h2>
+                <p>
+                    <label>Distance </label>
+                    <BR>
+                    <input id="distance" type="text"    placeholder='Insert Your Distance' 
+                    style="width: 260px; border: 1px; padding: 5px;">
+                    </BR>
+                </p>
+                <p>
+                    <label>Surge Multiplier </label>
+                    <br>
+                    <input  id="surgeMultiplier" type="text"  placeholder='Value Between 1; 1.25; 1.5; 1.75; 2; 2.25; 3;'
+                     style="width: 260px; border: 1px; padding: 5px; ">
+                </p>
+                <p>
+                    <label>Short Summary</label>
+                    <br>
+                    <input  id="shortSummary" type="text" placeholder='Insert Your Short Summary'
+                    style="width: 260px; border: 1px; padding: 5px;">
+                </p>
+                <p>
+                    <label>Source</label>
+                    <br>
+                    <input type="text" id="Source" placeholder='Insert Your Source ex: North End'
+                    style="width: 260px; border: 1px; padding: 5px;">
+                </p> 
+                <p>
+                    <label>Hour </label>
+                    <br>
+                    <input type="text" id="Hour" placeholder='Insert Your Hour' 
+                    style="width: 260px; border: 1px; padding: 5px;">
+                </p>
+                <p>
+                    <label>Vehicle</label>
+                    <br>
+                    <input  id="Vehicle" type="text" placeholder='Insert Your Short Vehicle'
+                    style="width: 260px; border: 1px; padding: 5px;">
+                </p>
+                <p>
+                    <label>Cab Name </label>
+                    <br>
+                    <input type="text" id="cab_type" placeholder="Select Your Cab" style="width: 260px; border: 1px; padding: 5px;">
+                </p>
+                <p>
+                    <h align="center">
+                        <button id="btnAdd" style="padding: 10px 24px;  color: black; background-color: #bf00ff;">Prediksi</button>
+                    </h>
+                </p>
+        </div>
+        <div class="middlepane"></div>
+                <div class="a-ri8">
+               </div> 
+            <table class="a-ri7">
+                <tr style=" width: 50px; padding: 0px; font-size: 25px;">
+                    <td colspan="3"><b>Prediksi Harga Taxi Anda </b></td>
+                </tr>
+                <div class="a-ri6">
+                    <td>
+                    <input id="subTotalPrice" value="" readonly/ style=" width: 200px; padding: 0px; font-size: 100px;">
+                    </td>
+                    <td style=" width: 200px; padding: 0px; font-size: 100px;">
+                        USD
+                    </td>
+                <tr>
+                    <td>Distance :</td>
+                    <td colspan="2">      
+                    <input id="distancev"  style=" width: 100px; padding: 0px; " readonly/ > Meter   
+                    </td>
+                </tr>
+                <tr>
+                    <td>Surge Multiplier :</td>
+                    <td colspan="2">
+                        <input id="surgeMultiplierv"  style=" width: 100px; padding: 0px; " readonly/ >
+                    </td>
+                </tr>
+                <tr>
+                    <td>Cab Name :</td>
+                    <td colspan="2">
+                        <input id="cab_typev"  style=" width: 100px; padding: 0px; " readonly/ >
+                    </td>
+                </tr>                   
+                <tr>
+                    <td>Source :</td>
+                    <td colspan="2">
+                        <input id="Sourcev"  style=" width: 100px; padding: 0px; " readonly/ >
+                    </td>
+                </tr>
+                <tr>
+                    <td>Short Summary :</td>
+                    <td colspan="2">
+                        <input id="shortSummaryv"  style=" width: 100px; padding: 0px;" readonly/ >
+                    </td>
+                </tr>   
+                <tr>
+                    <td>Hour</td>
+                    <td colspan="2">
+                        <input id="Hourv"style=" width: 100px; padding: 0px; " readonly/ > 
+                    </td>
+                </tr>
+                <tr>
+                    <td>Vehicle</td>
+                    <td colspan="2">
+                        <input id="Vehiclev"style=" width: 100px; padding: 0px; " readonly/ >
+                    </td>
+                </tr>
+            </div>
+            </table>
+        </div>
+    </div>
+    </div>
+    </div>
+
+    <script>
+        document.getElementById('btnAdd').addEventListener('click', () => {
+            //alert('test');
+            // get object each element html 
+
+            let distance = document.getElementById('distance');
+            let surgeMultiplier = document.getElementById('surgeMultiplier');
+            let shortSummary = document.getElementById('shortSummary');
+            let Source = document.getElementById('Source');
+            let Hour = document.getElementById('Hour');
+            let cab_type = document.getElementById('cab_type');
+
+            let subTotalPrice = document.getElementById('subTotalPrice');
+            let counter = parseInt(distance.value);
+            subTotalPrice.value = 3.15 * distance.value;
+
+
+
+            let distancev= document.getElementById("distancev");
+            distancev.value = parseInt(distance.value);
+
+            let surgeMultiplierv= document.getElementById("surgeMultiplierv");
+            surgeMultiplierv.value = surgeMultiplier.value;
+
+            let shortSummaryv= document.getElementById("shortSummaryv");
+            shortSummaryv.value = parseInt(shortSummary.value);
+
+            let Sourcev= document.getElementById("Sourcev");
+            Sourcev.value = Source.value;
+            
+            let Hourv= document.getElementById("Hourv");
+            Hourv.value = parseInt(Hour.value);
+
+            let cab_typev= document.getElementById("cab_typev");
+            cab_typev.value = cab_type.value;
+
+            let Vehiclev= document.getElementById("Vehiclev");
+            Vehiclev.value = Vehicle.value;
+
+
+
+            
+            // assign counter with value from quantity value
+        });
+       
+    </script>
+</body>
+</html>
