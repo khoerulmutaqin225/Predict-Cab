@@ -14,11 +14,28 @@
             <div class="middlepane">
                 <h2 >Predict Your Cab Price</h2>
                 <p>
-                    <label>Distance </label>
+                    <label>Cab Name </label>
+                    <br>
+                    <input type="text" id="cab_type" placeholder="Select Your Cab" style="width: 260px; border: 1px; padding: 5px;">
+                </p>
+                <p>
+                    <label>Source</label>
+                    <br>
+                    <input type="text" id="Source" placeholder='Insert Your Source ex: Los Angles'
+                    style="width: 260px; border: 1px; padding: 5px;">
+                </p>  
+                <p>
+                    <label>Destination </label>
                     <BR>
-                    <input id="distance" type="text"    placeholder='Insert Your Distance' 
+                    <input id="distance" type="text"    placeholder='Insert Your Destination' 
                     style="width: 260px; border: 1px; padding: 5px;">
                     </BR>
+                </p>
+                <p>
+                    <label>Short Summary</label>
+                    <br>
+                    <input  id="shortSummary" type="text" placeholder='Insert Your Short Summary'
+                        style="width: 260px; border: 1px; padding: 5px;">
                 </p>
                 <p>
                     <label>Surge Multiplier </label>
@@ -26,35 +43,9 @@
                     <input  id="surgeMultiplier" type="text"  placeholder='Value Between 1; 1.25; 1.5; 1.75; 2; 2.25; 3;'
                      style="width: 260px; border: 1px; padding: 5px; ">
                 </p>
-                <p>
-                    <label>Short Summary</label>
-                    <br>
-                    <input  id="shortSummary" type="text" placeholder='Insert Your Short Summary'
-                    style="width: 260px; border: 1px; padding: 5px;">
-                </p>
-                <p>
-                    <label>Source</label>
-                    <br>
-                    <input type="text" id="Source" placeholder='Insert Your Source ex: North End'
-                    style="width: 260px; border: 1px; padding: 5px;">
-                </p> 
-                <p>
-                    <label>Hour </label>
-                    <br>
-                    <input type="text" id="Hour" placeholder='Insert Your Hour' 
-                    style="width: 260px; border: 1px; padding: 5px;">
-                </p>
-                <p>
-                    <label>Vehicle</label>
-                    <br>
-                    <input  id="Vehicle" type="text" placeholder='Insert Your Short Vehicle'
-                    style="width: 260px; border: 1px; padding: 5px;">
-                </p>
-                <p>
-                    <label>Cab Name </label>
-                    <br>
-                    <input type="text" id="cab_type" placeholder="Select Your Cab" style="width: 260px; border: 1px; padding: 5px;">
-                </p>
+
+                 
+
                 <p>
                     <h align="center">
                         <button id="btnAdd" style="padding: 10px 24px;  color: black; background-color: #bf00ff;">Prediksi</button>
@@ -75,49 +66,7 @@
                     <td style=" width: 200px; padding: 0px; font-size: 100px;">
                         USD
                     </td>
-                <tr>
-                    <td>Distance :</td>
-                    <td colspan="2">      
-                    <input id="distancev"  style=" width: 100px; padding: 0px; " readonly/ > Meter   
-                    </td>
-                </tr>
-                <tr>
-                    <td>Surge Multiplier :</td>
-                    <td colspan="2">
-                        <input id="surgeMultiplierv"  style=" width: 100px; padding: 0px; " readonly/ >
-                    </td>
-                </tr>
-                <tr>
-                    <td>Cab Name :</td>
-                    <td colspan="2">
-                        <input id="cab_typev"  style=" width: 100px; padding: 0px; " readonly/ >
-                    </td>
-                </tr>                   
-                <tr>
-                    <td>Source :</td>
-                    <td colspan="2">
-                        <input id="Sourcev"  style=" width: 100px; padding: 0px; " readonly/ >
-                    </td>
-                </tr>
-                <tr>
-                    <td>Short Summary :</td>
-                    <td colspan="2">
-                        <input id="shortSummaryv"  style=" width: 100px; padding: 0px;" readonly/ >
-                    </td>
-                </tr>   
-                <tr>
-                    <td>Hour</td>
-                    <td colspan="2">
-                        <input id="Hourv"style=" width: 100px; padding: 0px; " readonly/ > 
-                    </td>
-                </tr>
-                <tr>
-                    <td>Vehicle</td>
-                    <td colspan="2">
-                        <input id="Vehiclev"style=" width: 100px; padding: 0px; " readonly/ >
-                    </td>
-                </tr>
-            </div>
+                </div>
             </table>
         </div>
     </div>
@@ -160,8 +109,8 @@
             let cab_typev= document.getElementById("cab_typev");
             cab_typev.value = cab_type.value;
 
-            let Vehiclev= document.getElementById("Vehiclev");
-            Vehiclev.value = Vehicle.value;
+            //let Vehiclev= document.getElementById("Vehiclev");
+            //Vehiclev.value = Vehicle.value;
 
 
 
